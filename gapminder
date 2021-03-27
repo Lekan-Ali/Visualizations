@@ -1,0 +1,13 @@
+
+library(tidyverse)
+library(Amelia)
+
+
+# Load Data
+library(gapminder)
+
+#check for missing values with missmap(missmap is from the Amelia package)
+missmap(gapminder)
+
+#Exploratory data analysis
+
