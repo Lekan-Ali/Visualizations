@@ -18,13 +18,32 @@ gp <- gapminder %>% filter(year == 2007) %>%
   as.data.frame() %>% set_rownames(.[,1]) %>%
   .[,-1]
 
-#step 2: scale data.frame (this is needed for PCA and clustering analysis):
+PCA Analysis:
+
+#step 1: scale data.frame (this is needed for PCA and clustering analysis):
 gp1 <- scale(gp)
 
-#step 3: Perform PCA:
+#step 2: Perform PCA:
 
 gp2 <- prcomp(gp1, scale = T)
 
-biplot(gp, cex = .7)
+biplot(gp, scale = 0)
 
 #comment: 
+
+
+Cluster Analysis:
+
+#step 1: 
+
+gp5 <- hclust(dist(gp))
+
+plot(gp5, cex = .7, col = "red")
+
+# comment: 
+
+
+
+
+
+
